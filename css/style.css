@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: #1F223C;
+    color: white;
+}
+
+button, input{
+    border: none;
+}
+
+button:hover:not(.search, #buttonSupprimer,#annulerDelete,#deleteCompte){
+    background: #7160D6;
+}
+
+header {
+    width: 82vw;
+    height: 15vh;
+}
+
+header > form {
+    position: absolute;
+    width: 700px;
+    height: 40px;
+    left: 20vw;
+    top: 4vh;
+
+    border-radius: 34px;
+    background: #2C2F50;
+
+    display: flex;
+}
+
+header > form > input {
+    width: 100%;
+    background: #2C2F50;
+    border-radius: 34px;
+    color: white;
+    padding-left: 3%;
+    
+}
+
+header > form > input:focus{
+    outline: none;
+}
+
+header > form > button {
+
+    border-radius: 34px;
+    height: 40px;
+    width: 40px;
+
+    background: #2C2F50;
+}
+
+header > a > button{   
+    background: #2C2F50;
+}
+
+header > a > button:hover{
+    background: #7160D6;
+}
+
+header > .profil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    left: 1237px;
+    top: 3vh;
+
+    background: #2C2F50;
+    border-radius: 50px;
+}
+
+header > a > .profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    left: 86vw;
+    top: 3vh;
+
+    border-radius: 50px;
+}
+
+header > a > .message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    left: 90vw;
+    top: 3vh;
+
+    border-radius: 50px;
+}
+
+header > a > .parametre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    left: 94vw;
+    top: 3vh;
+  
+    border-radius: 50px;
+}
+
+aside {
+    width: 18vw;
+    height: 100vh;
+    border-right: 1px solid black;
+}
+
+ul{
+    list-style-type: none;
+}
+
+aside > ul > li > a > button{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    background: #2C2F50;
+    color: white;
+}
+
+
+
+.admin {
+    padding: 5%;
+    gap: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deconnexion {
+
+    background: #2C2F50;
+
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+    top: 87vh;
+    left: 6vw;
+}
+
+
+
+.logo {
+    background-color: gray;
+    position: absolute;
+    width: 80px;
+    height:80px;
+    border-radius: 50px;
+    top:2vh;
+    left:6vw;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    position: absolute;
+    width: 174px;
+    height: 400px;
+    left: 3vw;
+    top: 17vh;
+}
+
+.accueil{
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 18px;
+
+    width: 160px;
+    height: 50px;
+
+    border-radius: 4px;
+}
+
+.amis{
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 18px;
+
+    width: 160px;
+    height: 50px;
+
+    border-radius: 4px;
+}
+
+.jeux{
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 18px;
+
+    width: 160px;
+    height: 50px;
+
+    border-radius: 4px;
+}
+
+.salons{
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 18px;
+
+    width: 160px;
+    height: 50px;
+
+    border-radius: 4px;
+}
+
+main {
+    width: 82vw;
+    min-height: 85vh;
+    border-top: black solid 1px;
+}
+
+h2 {
+    text-align: center;
+    margin: 2vh 2vw;
+}
+
+main > .jeu {
+    
+    width: 1119px;
+    height: 140px;
+    
+    margin: 2vh 2vw;
+
+    background: #363962;
+    border-radius: 10px;
+
+    display: flex;
+}
+
+main > .jeu > .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32%;
+}
+
+main > .jeu > .image > img {
+    Width: 276px;
+    Height: 103px;
+}
+
+main > .jeu > .descriptionJeu{
+    border-left: white 1px solid;
+    width:68%;
+}
+
+main > .jeu > .descriptionJeu > .titreJeu{
+    border-bottom: white 1px solid;
+    padding: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+}
+
+main > .jeu > .descriptionJeu > .boiteInfo {
+    display: flex;
+    height: 76%;
+}
+
+main > .jeu > .descriptionJeu > .boiteInfo > .tags{
+    padding: 1% 1% 0 1%;
+    width:20%;
+}
+
+main > .jeu > .descriptionJeu > .boiteInfo > .description {
+    padding: 1% 1% 0 1%;
+    border-left: white 1px solid;
+}
+
+main > .pageParametre > a > button{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    background: transparent;
+    color: white;
+}
+
+main > .pageParametre > form {
+    position: relative;
+    left: 20vw;
+    top: 12vh;
+    width: 600px;
+}
+
+.pageParametre > form > .nom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    width: 600px;
+    height: 72px;
+    
+}
+
+.pageParametre > form > .nom > input{
+    padding: 1%;
+}
+
+.pageParametre > form > .mail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    width: 600px;
+    height: 72px;
+}
+
+.pageParametre > form > .mail > input{
+    padding: 1%;
+}
+
+.pageParametre > form > .mdp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    width: 600px;
+    height: 72px;
+}
+
+.pageParametre > form > .mdp > input{
+    padding: 1%;
+}
+
+.pageParametre > form > .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    width: 600px;
+    height: 72px;
+}
+
+.pageParametre > form > .image > input{
+    padding: 1%;
+}
+
+.pageParametre > form > .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    width: 600px;
+    height: 72px;
+}
+
+.pageParametre > form > .information > input{
+    padding: 1%;
+}
+
+.pageParametre > form > input[type="submit"]{
+    padding: 1% 3%;
+    position: relative;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+main > .pageParametre > p {
+    position: relative;
+    text-align: center;
+    left: 20vw;
+    top:18vh;
+    width: fit-content;
+    padding: 1%;
+    background: green;
+}
+
+.pageParametre > .button {
+    background: red;
+    padding: 1vh 2%;
+    position: relative;
+    top: 7vh;
+    left: 40vw;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+}
+
+#buttonSupprimer {  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    background: transparent;
+    color: white;
+    display: flex;
+    width: 100%;
+}
+
+#buttonSupprimer > p {
+    margin-left: 10px
+}
+
+#supprimer{
+    visibility: hidden;
+    position:fixed; 
+    transition: opacity 500ms;
+    opacity : 0;
+}
+  
+#supprimer:target{
+    visibility: visible;
+    top:25vh;
+    left:25vw;
+    height: 60vh;
+    width: 60vw;
+    opacity : 1;
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#supprimer > p
+{
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+#supprimer > div {
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+#supprimer > div > a{
+    width: 10vw;
+    height: 5vh;
+    text-align: center;
+}
+
+#supprimer > div > a > button{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+}
+
+#deleteCompte{
+    padding: 8%;
+    gap: 10px;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#annulerDelete{
+    padding: 8%;
+    gap: 10px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#supprimer > div > a > button > img{
+    height: 70%;
+}
+
+.boutonAdmin {
+    margin: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boutonAdmin > li > a > button {
+    color: white;
+
+    padding: 1%;
+    background: #2C2F50;
+}
+
+.tabAdmin{
+    width: 96%;
+    border: black 1px solid;
+    margin: 2%;
+}
+
+.tabAdmin > tbody >tr > td > img {
+    width: 10vw;
+}
+
+.adminDescription {
+    width: 20%;
+}
+
+thead, tbody, tr, td {
+    border: black 1px solid;
+    text-align: center;
+}
+
+td > p{
+    text-align: center;
+}

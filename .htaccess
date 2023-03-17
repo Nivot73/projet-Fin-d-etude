@@ -1,0 +1,9 @@
+Options -Indexes
+<IfModule mod_authz_core.c>
+        <Files "index.php">
+                Require all granted
+           </Files>
+           <FilesMatch "^/(Projet Handigital)/[^/]+/">
+                Require all denied
+            </FilesMatch>
+</IfModule>
