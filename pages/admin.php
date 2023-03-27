@@ -98,10 +98,18 @@ if(isset($_GET['tab'])){
 
             foreach ($listGenre as $genre) {
             
-            //Lecture de la BDD (table Genre) WHERE id = id
+            $id = strip_tags($genre["id"]);
+
+            $sql = 'SELECT nom FROM `genres` WHERE `id`=:id';
+            $query = $db->prepare($sql);
+            $query->bindValue(':id', $id);
+            $query->execute();
+            $nomGenre = $query->fetch(PDO::FETCH_ASSOC);
+    
+            ?>
+            <p class="genreJeux"><?= $nomGenre["nom"] ?></p>
+            <?php } ?>
             
-            
-            } ?>
             </td>
             <td>Actions</td>
         </tr>
