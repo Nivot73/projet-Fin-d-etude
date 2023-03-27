@@ -546,6 +546,7 @@ main > .pageParametre > p {
 thead, tbody, tr, td {
     border: black 1px solid;
     text-align: center;
+    background: #363962;
 }
 
 td > p{
