@@ -18,7 +18,7 @@ if(isset($_GET['tab'])){
         $sql = 'SELECT * FROM `utilisateurs` ';
         $query = $db->prepare($sql);
         $query->execute();
-        $listUtilisateur = $query->fetchAll(PDO::FETCH_ASSOC);
+        $listUtilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <thead>
     <tr>
@@ -33,13 +33,13 @@ if(isset($_GET['tab'])){
 </thead>
 <tbody>
 <?php
-    foreach ($listUtilisateur as $utilisateur) {
+    foreach ($listUtilisateurs as $utilisateur) {
     ?>
     
         <tr>
             <td><?= $utilisateur['id'] ?></td>
             <td><?= $utilisateur['nom'] ?></td>
-            <td class="adminDescription"><p><?= $utilisateur['e-mail'] ?></p></td>
+            <td ><?= $utilisateur['e-mail'] ?></td>
             <td><img src="images/imageJeu/<?= $utilisateur['image'] ?>" class="imageListAdmin"></td>
             <td><?= $utilisateur['information'] ?></td>
             <?php if($utilisateur['role'] == 1){
@@ -111,9 +111,35 @@ if(isset($_GET['tab'])){
 <?php } 
 
     if($_GET['tab'] == "salons"){
+
+        $sql = 'SELECT * FROM `salons` ';
+        $query = $db->prepare($sql);
+        $query->execute();
+        $listSalons = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<thead></thead>
-<tbody></tbody>
+<thead>
+    <tr>
+        <td>ID</td>
+        <td>Nom</td>
+        <td>Description</td>
+        <td>Id du Jeux sujet</td>
+        <td>Actions</td>
+    </tr>
+</thead>
+<tbody>
+<?php
+    foreach ($listSalons as $salon) {
+    ?>
+    
+        <tr>
+            <td><?= $salon['id'] ?></td>
+            <td><?= $salon['nom'] ?></td>
+            <td ><?= $salon['description'] ?></td>
+            <td><?= $salon['id_jeux'] ?></td>
+            <td>Actions</td>
+        </tr>
+    <?php } ?>
+</tbody>
 <?php }
 echo "</table>";
 } 
