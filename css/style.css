@@ -552,3 +552,39 @@ thead, tbody, tr, td {
 td > p{
     text-align: center;
 }
+
+.imageProfil{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 47vw;
+    top: 18vh;
+    border-radius: 500px;
+}
+
+.pseudoProfil {
+    position: absolute;
+    width: 200px;
+    height: 66px;
+    left: 47vw;
+    top: 45vh;
+
+    text-align: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #FFFFFF;
+}
+
+.blocListAmis{
+    position: absolute;
+    width: 380px;
+    height: 559px;
+    left: 18vw;
+    top: 55vh;
+    background: #363962;
+}
