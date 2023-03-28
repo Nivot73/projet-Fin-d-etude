@@ -567,8 +567,8 @@ td > p{
     position: absolute;
     width: 200px;
     height: 200px;
-    left: 47vw;
-    top: 18vh;
+    left: 34vw;
+    top: 3vh;
     border-radius: 500px;
 }
 
@@ -576,8 +576,8 @@ td > p{
     position: absolute;
     width: 200px;
     height: 66px;
-    left: 47vw;
-    top: 45vh;
+    left: 34vw;
+    top: 30vh;
 
     text-align: center;
 
@@ -590,11 +590,17 @@ td > p{
     color: #FFFFFF;
 }
 
-.blocListAmis{
+.blockListGroup{
     position: absolute;
+    top: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh 2vw 0 1vw;
+}
+
+.blockList{
     width: 380px;
     height: 559px;
-    left: 18vw;
-    top: 55vh;
     background: #363962;
 }

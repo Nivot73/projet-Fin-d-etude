@@ -12,9 +12,10 @@ require_once('bdd/connect.php');
 require_once('bdd/close.php');
 ?>
 
-
 <img class="imageProfil" src="images/imageJeu/<?= $info['image'] ?>" alt="">
 <p class="pseudoProfil" ><?= $info['nom'] ?></p>
-<div class="blocListAmis">
-
+<div class="blockListGroup">
+    <div class="blockList"></div>
+    <div class="blockList"></div>
+    <div class="blockList"></div>
 </div>
