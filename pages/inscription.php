@@ -6,8 +6,7 @@ $erreur = "";
 if (isset($_POST)){
     if(isset($_POST['nom']) && !empty($_POST['nom'])
     && isset($_POST['mail']) && !empty($_POST['mail'])
-    && isset($_POST['mdp']) && !empty($_POST['nom'])
-    && isset($_POST['date']) && !empty($_POST['date'])){
+    && isset($_POST['mdp']) && !empty($_POST['mdp'])){
 
         $nom = strip_tags($_POST['nom']);
         $mail = strip_tags($_POST['mail']);
@@ -24,9 +23,9 @@ if (isset($_POST)){
             $nom = strip_tags($_POST['nom']);
             $mail = strip_tags($_POST['mail']);
             $mdp = strip_tags($_POST['mdp']);
-            $date = strip_tags($_POST['date']);
+            $date = strip_tags(date("d F y"));
 
-            $sql = "INSERT INTO `utilisateurs`(`nom`, `e-mail`, `image`, `information`, `connexion`, `mdp`, `role`) VALUES (:nom,:mail,'',:date,'1',:mdp,'0')";
+            $sql = "INSERT INTO `utilisateurs`(`nom`, `e-mail`, `information`, `mdp`) VALUES (:nom,:mail,:date,:mdp)";
 
             $query = $db->prepare($sql);
             $query->bindValue(':nom', $nom);
@@ -82,10 +81,6 @@ require_once('bdd/close.php');
     <div class="mdp">
         <label for="mdp"> Mot de Passe : </label>
         <input type="password" name="mdp" id="mdp" required><br>
-    </div>
-    <div class="date">
-        <label for="date"> Date de naissance : </label>
-        <input type="date" name="date" id="date" required><br>
     </div>
     <div class="CGU">
         <input type="checkbox" name="CGU" id="CGU" required>

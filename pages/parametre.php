@@ -6,17 +6,15 @@
     if(isset($_POST['nom']) && !empty($_POST['nom'])
     && isset($_POST['mail']) && !empty($_POST['mail'])
     && isset($_POST['mdp']) && !empty($_POST['mdp'])
-    && isset($_POST['image']) && !empty($_POST['image'])
-    && isset($_POST['information']) && !empty($_POST['information']))
+    && isset($_POST['image']) && !empty($_POST['image']))
     {
         $id = strip_tags($_SESSION['id']);
         $nom = strip_tags($_POST['nom']);
         $mail = strip_tags($_POST['mail']);
         $mdp = strip_tags($_POST['mdp']);
         $image = strip_tags($_POST['image']);
-        $information = strip_tags($_POST['information']);
 
-        $sql = "UPDATE `utilisateurs` SET `nom`=:nom, `e-mail`=:mail, `mdp`=:mdp, `image`=:image, `information`=:information WHERE `id`=:id;";
+        $sql = "UPDATE `utilisateurs` SET `nom`=:nom, `e-mail`=:mail, `mdp`=:mdp, `image`=:image WHERE `id`=:id;";
 
         $query = $db->prepare($sql);
 
@@ -25,7 +23,6 @@
         $query->bindValue(':mail', $mail);
         $query->bindValue(':mdp', $mdp);
         $query->bindValue(':image', $image);
-        $query->bindValue(':information', $information);
     
         $query->execute();
 
@@ -59,8 +56,7 @@
             <input type="text" name="image" id="image" value="<?= $infoUtilisateur['image'] ?>"><br>
         </div>
         <div class="information">
-            <label for="information">Date de naissance : </label>
-            <input type="date" name="information" id="information" value="<?= $infoUtilisateur['information'] ?>"><br>
+            <p>Inscrit depuis le <?= $infoUtilisateur['information'] ?></p>
         </div>
         <input type="submit" value="Modifier">
     </form>

@@ -46,7 +46,7 @@ require_once('bdd/connect.php');
                 { ?><p>status: connecté <br> <?php } 
 
                 else {?>
-                    <p>status: déconnecté <br>
+                    <p>status: déconnecté <br> inscript depuis le 
                     <?php } 
                     echo $donnees['information']; ?></p>
             </div>
