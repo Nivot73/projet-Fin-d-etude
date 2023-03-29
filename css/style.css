@@ -603,4 +603,44 @@ td > p{
     width: 380px;
     height: 559px;
     background: #363962;
+    padding: 1%;
+}
+
+.blockList > p {
+    border-bottom: white 1px solid;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    width: 100%;
+    padding: 1%;
+}
+
+.blockAmis {
+    Width:349px;
+    Height:82.85px;
+    background: #2C2F50;
+    margin-top: 3%;
+
+    display: flex;
+}
+
+.blockAmis > img{
+    Width:66px;
+    Height:54px;
+    margin: auto;
+}
+
+.blockAmis > div {
+    width: 70%;
+}
+
+.blockAmis > div > p {
+    margin: 1%;
+}
+
+.blockAmisNom {
+    border-bottom: white 1px solid;
 }
