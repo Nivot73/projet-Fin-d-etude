@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : ven. 17 mars 2023 à 13:58
--- Version du serveur : 8.0.30
--- Version de PHP : 8.1.10
+-- Host: localhost:3306
+-- Generation Time: Mar 29, 2023 at 02:20 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `projethandigital`
+-- Database: `projethandigital`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `amis`
+-- Table structure for table `amis`
 --
 
 CREATE TABLE `amis` (
@@ -32,10 +32,18 @@ CREATE TABLE `amis` (
   `id_utilisateurs` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `amis`
+--
+
+INSERT INTO `amis` (`id`, `id_utilisateurs`) VALUES
+(8, 5),
+(8, 11);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commentaires`
+-- Table structure for table `commentaires`
 --
 
 CREATE TABLE `commentaires` (
@@ -49,7 +57,26 @@ CREATE TABLE `commentaires` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `genrejeu`
+-- Table structure for table `favori`
+--
+
+CREATE TABLE `favori` (
+  `id` int NOT NULL,
+  `id_utilisateurs` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `favori`
+--
+
+INSERT INTO `favori` (`id`, `id_utilisateurs`) VALUES
+(8, 5),
+(8, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `genrejeu`
 --
 
 CREATE TABLE `genrejeu` (
@@ -58,17 +85,17 @@ CREATE TABLE `genrejeu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `genrejeu`
+-- Dumping data for table `genrejeu`
 --
 
 INSERT INTO `genrejeu` (`id`, `id_jeux`) VALUES
 (1, 1),
-(1, 2);
+(3, 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `genres`
+-- Table structure for table `genres`
 --
 
 CREATE TABLE `genres` (
@@ -78,7 +105,7 @@ CREATE TABLE `genres` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `genres`
+-- Dumping data for table `genres`
 --
 
 INSERT INTO `genres` (`id`, `nom`, `description`) VALUES
@@ -94,7 +121,7 @@ INSERT INTO `genres` (`id`, `nom`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `jeujouer`
+-- Table structure for table `jeujouer`
 --
 
 CREATE TABLE `jeujouer` (
@@ -102,10 +129,25 @@ CREATE TABLE `jeujouer` (
   `id_utilisateurs` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `jeujouer`
+--
+
+INSERT INTO `jeujouer` (`id`, `id_utilisateurs`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(3, 5),
+(1, 8),
+(3, 8),
+(5, 12);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `jeux`
+-- Table structure for table `jeux`
 --
 
 CREATE TABLE `jeux` (
@@ -117,17 +159,20 @@ CREATE TABLE `jeux` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `jeux`
+-- Dumping data for table `jeux`
 --
 
 INSERT INTO `jeux` (`id`, `nom`, `description`, `image`, `date_de_sortie`) VALUES
-(1, 'testnom', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro dicta, placeat aspernatur impedit eos. Porro pariatur quis minus esse quidem expedita sequi odit, facilis est quisquam voluptate praesentium ullam.', 'avatar.jpeg', '2023-03-01'),
-(2, 'testnom', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro dicta, placeat aspernatur impedit eos. Porro pariatur quis minus esse quidem expedita sequi odit, facilis est quisquam voluptate praesentium ullam.', 'avatar.jpeg', '2023-03-01');
+(1, 'jeux 1', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro dicta, placeat aspernatur impedit eos. Porro pariatur quis minus esse quidem expedita sequi odit, facilis est quisquam voluptate praesentium ullam.', 'avatar.jpeg', '2023-03-01'),
+(2, 'jeux2', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro dicta, placeat aspernatur impedit eos. Porro pariatur quis minus esse quidem expedita sequi odit, facilis est quisquam voluptate praesentium ullam.', 'avatar.jpeg', '2023-03-01'),
+(3, 'un grand nom de jeu 3', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro dicta, placeat aspernatur impedit eos. Porro pariatur quis minus esse quidem expedita sequi odit, facilis est quisquam voluptate praesentium ullam.', 'avatar.jpeg', '2023-03-01'),
+(4, 'nom4', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro dicta, placeat aspernatur impedit eos. Porro pariatur quis minus esse quidem expedita sequi odit, facilis est quisquam voluptate praesentium ullam.', 'avatar.jpeg', '2023-03-01'),
+(5, 'abra kadabra alakazam 5', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque porro dicta, placeat aspernatur impedit eos. Porro pariatur quis minus esse quidem expedita sequi odit, facilis est quisquam voluptate praesentium ullam.', 'avatar.jpeg', '2023-03-01');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `salonrejoind`
+-- Table structure for table `salonrejoind`
 --
 
 CREATE TABLE `salonrejoind` (
@@ -135,58 +180,80 @@ CREATE TABLE `salonrejoind` (
   `id_utilisateurs` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `salonrejoind`
+--
+
+INSERT INTO `salonrejoind` (`id`, `id_utilisateurs`) VALUES
+(1, 8),
+(2, 8);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `salons`
+-- Table structure for table `salons`
 --
 
 CREATE TABLE `salons` (
   `id` int NOT NULL,
   `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'avatar.jpeg',
   `id_jeux` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `salons`
+--
+
+INSERT INTO `salons` (`id`, `nom`, `description`, `image`, `id_jeux`) VALUES
+(1, 'unsalon', 'un salon de test', 'avatar.jpeg', 1),
+(2, 'un salon de coiffure', 'un salon ou vous pouvez rencontrer des coiffeur', 'avatar.jpeg', 3);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs`
+-- Table structure for table `utilisateurs`
 --
 
 CREATE TABLE `utilisateurs` (
   `id` int NOT NULL,
   `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `e-mail` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `e-mail` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'avatar.jpeg',
   `information` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `connexion` int NOT NULL COMMENT 'etat de la connexion.',
+  `connexion` int NOT NULL DEFAULT '1' COMMENT 'etat de la connexion.',
   `mdp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `role` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `utilisateurs`
+-- Dumping data for table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id`, `nom`, `e-mail`, `image`, `information`, `connexion`, `mdp`, `role`) VALUES
-(1, 'test', 'test@test.test', 'test', '2023-03-01', 0, 'test', 0),
-(5, 'a', 'a@a.fr', '', '2023-03-01', 0, 'a', 0),
-(8, 'adminnom', 'adminmail@mail.fr', 'adminimage', '2023-03-01', 1, 'adminmdp', 1);
+(1, 'test', 'test@test.test', 'avatar.jpeg', '29 March 23', 0, 'test', 0),
+(5, 'a', 'a@a.fr', 'avatar.jpeg', '29 March 23', 0, 'a', 0),
+(8, 'adminnom', 'adminmail@mail.fr', 'avatar.jpeg', '29 March 23', 1, 'adminmdp', 1),
+(9, 'babar', 'babar@elephant.com', 'avatar.jpeg', '29 March 23', 0, 'babar', 0),
+(11, 'hercule', 'hercule@hero.com', 'avatar.jpeg', '29 March 23', 0, 'hercule', 0),
+(12, 'pape', 'pape@vatican.com', 'avatar.jpeg', '29 March 23', 0, 'pape', 0),
+(13, 'poppy', 'poppy@poppy.com', 'avatar.jpeg', '29 March 23', 0, 'poppy', 0),
+(14, 'BobEponge', 'bob@eponge.com', 'avatar.jpeg', '29 March 23', 0, 'BobEponge', 0);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `amis`
+-- Indexes for table `amis`
 --
 ALTER TABLE `amis`
   ADD PRIMARY KEY (`id`,`id_utilisateurs`),
   ADD KEY `amie_utilisateurs0_FK` (`id_utilisateurs`);
 
 --
--- Index pour la table `commentaires`
+-- Indexes for table `commentaires`
 --
 ALTER TABLE `commentaires`
   ADD PRIMARY KEY (`id`),
@@ -194,47 +261,54 @@ ALTER TABLE `commentaires`
   ADD KEY `commentaires_salons0_FK` (`id_salons`);
 
 --
--- Index pour la table `genrejeu`
+-- Indexes for table `favori`
+--
+ALTER TABLE `favori`
+  ADD PRIMARY KEY (`id`,`id_utilisateurs`),
+  ADD KEY `amie_utilisateurs0_FK` (`id_utilisateurs`);
+
+--
+-- Indexes for table `genrejeu`
 --
 ALTER TABLE `genrejeu`
   ADD PRIMARY KEY (`id`,`id_jeux`),
   ADD KEY `appartient_jeux0_FK` (`id_jeux`);
 
 --
--- Index pour la table `genres`
+-- Indexes for table `genres`
 --
 ALTER TABLE `genres`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `jeujouer`
+-- Indexes for table `jeujouer`
 --
 ALTER TABLE `jeujouer`
   ADD PRIMARY KEY (`id`,`id_utilisateurs`),
   ADD KEY `jouer_utilisateurs0_FK` (`id_utilisateurs`);
 
 --
--- Index pour la table `jeux`
+-- Indexes for table `jeux`
 --
 ALTER TABLE `jeux`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `salonrejoind`
+-- Indexes for table `salonrejoind`
 --
 ALTER TABLE `salonrejoind`
   ADD PRIMARY KEY (`id`,`id_utilisateurs`),
   ADD KEY `rejoind_utilisateurs0_FK` (`id_utilisateurs`);
 
 --
--- Index pour la table `salons`
+-- Indexes for table `salons`
 --
 ALTER TABLE `salons`
   ADD PRIMARY KEY (`id`),
   ADD KEY `salons_jeux_FK` (`id_jeux`);
 
 --
--- Index pour la table `utilisateurs`
+-- Indexes for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`id`),
@@ -242,80 +316,80 @@ ALTER TABLE `utilisateurs`
   ADD UNIQUE KEY `e-mail` (`e-mail`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `commentaires`
+-- AUTO_INCREMENT for table `commentaires`
 --
 ALTER TABLE `commentaires`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `genres`
+-- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT pour la table `jeux`
+-- AUTO_INCREMENT for table `jeux`
 --
 ALTER TABLE `jeux`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `salons`
+--
+ALTER TABLE `salons`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `salons`
---
-ALTER TABLE `salons`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `utilisateurs`
+-- AUTO_INCREMENT for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `amis`
+-- Constraints for table `amis`
 --
 ALTER TABLE `amis`
   ADD CONSTRAINT `amie_utilisateurs0_FK` FOREIGN KEY (`id_utilisateurs`) REFERENCES `utilisateurs` (`id`),
   ADD CONSTRAINT `amie_utilisateurs_FK` FOREIGN KEY (`id`) REFERENCES `utilisateurs` (`id`);
 
 --
--- Contraintes pour la table `commentaires`
+-- Constraints for table `commentaires`
 --
 ALTER TABLE `commentaires`
   ADD CONSTRAINT `commentaires_salons0_FK` FOREIGN KEY (`id_salons`) REFERENCES `salons` (`id`),
   ADD CONSTRAINT `commentaires_utilisateurs_FK` FOREIGN KEY (`id_utilisateurs`) REFERENCES `utilisateurs` (`id`);
 
 --
--- Contraintes pour la table `genrejeu`
+-- Constraints for table `genrejeu`
 --
 ALTER TABLE `genrejeu`
   ADD CONSTRAINT `appartient_genres_FK` FOREIGN KEY (`id`) REFERENCES `genres` (`id`),
   ADD CONSTRAINT `appartient_jeux0_FK` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`);
 
 --
--- Contraintes pour la table `jeujouer`
+-- Constraints for table `jeujouer`
 --
 ALTER TABLE `jeujouer`
   ADD CONSTRAINT `jouer_jeux_FK` FOREIGN KEY (`id`) REFERENCES `jeux` (`id`),
   ADD CONSTRAINT `jouer_utilisateurs0_FK` FOREIGN KEY (`id_utilisateurs`) REFERENCES `utilisateurs` (`id`);
 
 --
--- Contraintes pour la table `salonrejoind`
+-- Constraints for table `salonrejoind`
 --
 ALTER TABLE `salonrejoind`
   ADD CONSTRAINT `rejoind_salons_FK` FOREIGN KEY (`id`) REFERENCES `salons` (`id`),
   ADD CONSTRAINT `rejoind_utilisateurs0_FK` FOREIGN KEY (`id_utilisateurs`) REFERENCES `utilisateurs` (`id`);
 
 --
--- Contraintes pour la table `salons`
+-- Constraints for table `salons`
 --
 ALTER TABLE `salons`
   ADD CONSTRAINT `salons_jeux_FK` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`);
