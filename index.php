@@ -41,6 +41,14 @@ if(isset($_SESSION["connecter"])){
 			include 'pages/profil.php' ;
 		break;
 
+		case 'profilAmis' :
+			$title = "Profil" ;
+			?> <style>
+    			.profil{background: #7160D6;}
+				</style> <?php
+			include 'pages/profilAmis.php' ;
+		break;
+
 		case 'message' :
 			$title = "Liste des Message" ;
 			?> <style>
