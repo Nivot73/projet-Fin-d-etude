@@ -659,16 +659,30 @@ td > p{
     Height:70px;
 }
 
-.listUtilisateurBlock:first-child{
+.boiteID{
     width: 20%;
 }
 
-.listUtilisateurBlock:nth-child(2){
-    border-left: white 1px solid;
-    border-right: white 1px solid;
+.boiteListSalon{
     width:40%;
 }
 
-.listUtilisateurBlock:last-child{
+.boiteListJeu{
+    border-left: white 1px solid;
+    border-right: white 1px solid;
     width:40%;
+    padding: 1% 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.boiteJeu{
+    display: flex;
+    width: 40%;
+}
+
+.boiteJeu > img{
+    Width:70px;
+    Height:70px;
 }

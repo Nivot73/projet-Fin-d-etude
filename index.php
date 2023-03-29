@@ -147,8 +147,8 @@ else {
 		break;
 
 		default :
-			$title = "erreur page inexistante" ;
-			include 'pages/404.php' ;
+			$title = 'page de connexion';
+			include 'pages/connexion.php';
 		break;
 
 	endswitch;

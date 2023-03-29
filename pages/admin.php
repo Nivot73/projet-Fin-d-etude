@@ -40,7 +40,7 @@ if(isset($_GET['tab'])){
             <td><?= $utilisateur['id'] ?></td>
             <td><?= $utilisateur['nom'] ?></td>
             <td ><?= $utilisateur['e-mail'] ?></td>
-            <td><img src="images/imageJeu/<?= $utilisateur['image'] ?>" class="imageListAdmin"></td>
+            <td><img src="images/avatar/<?= $utilisateur['image'] ?>" class="imageListAdmin"></td>
             <td><?= $utilisateur['information'] ?></td>
             <?php if($utilisateur['role'] == 1){
                 $role = "admin";

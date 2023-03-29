@@ -18,13 +18,40 @@ foreach ($listUtilisateurs as $utilisateur) {
 ?>
 
 <div class="listUtilisateurBlock">
-    <div>
-        <img src="images/imageJeu/<?= $utilisateur['image'] ?>" alt="">
+    <div class="boiteID">
+        <img src="images/avatar/<?= $utilisateur['image'] ?>" alt="">
         <p><?= $utilisateur['nom'] ?></p>
         <p><?= $utilisateur['information'] ?></p>
+        <p><?= $utilisateur['connexion'] ?></p>
     </div>
-    <div></div>
-    <div></div>
+    <div class="boiteListJeu">
+    <?php
+
+    $id = $utilisateur['id'];
+
+    $sql = 'SELECT * FROM `jeujouer` WHERE `id_utilisateurs`=:id LIMIT 4';
+    $query = $db->prepare($sql);
+    $query->bindValue(':id', $id);
+    $query->execute();
+    $listJeux = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($listJeux as $jeu){
+
+        $id = $jeu['id'];
+
+        $sql = 'SELECT * FROM `jeux` WHERE `id`=:id';
+        $query = $db->prepare($sql);
+        $query->bindValue(':id', $id);
+        $query->execute();
+        $donnees = $query->fetch(PDO::FETCH_ASSOC);
+        ?>
+        <div class="boiteJeu">
+            <img src="images/imageJeu/<?= $donnees['image'] ?>" alt="">
+            <p><?= $donnees['nom']; ?></p>
+        </div>
+    <?php } ?>
+    </div>
+    <div class="boiteListSalon"></div>
 </div>
 
 <?php } 
