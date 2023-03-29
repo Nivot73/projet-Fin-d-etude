@@ -57,12 +57,12 @@ if(isset($_SESSION["connecter"])){
 			include 'pages/parametre.php' ;
 		break;
 
-		case 'listeAmis' :
-			$title = "Liste des amis" ;
+		case 'listeUtilisateur' :
+			$title = "Liste des Utilisateurs" ;
 			?> <style>
     			.amis{background: #7160D6;}
 				</style> <?php
-			include 'pages/listeAmis.php' ;
+			include 'pages/listeUtilisateurs.php' ;
 		break;
 
 		case 'listeJeux' :
