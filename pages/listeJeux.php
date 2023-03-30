@@ -14,23 +14,25 @@ require_once('bdd/close.php');
 <?php
 foreach ($listJeux as $jeu) {
 ?>
-    <div class="jeu">
-        <div class="image">
-            <img src="images/imageJeu/<?= $jeu['image'] ?>">
-        </div>    
-        <div class="descriptionJeu">
-            <div class="titreJeu">
-                <p class="titre"> <?= $jeu['nom'] ?> </p>
-                <p class="dateSortie"><?= $jeu['date_de_sortie'] ?></p>
-            </div>
-            <div class="boiteInfo">
-                <div class="tags">
-                    <p>des tags à foison</p>
+    <a href="?page=jeu&id=<?= $jeu['id'] ?>">
+        <div class="jeu">
+            <div class="image">
+                <img src="images/imageJeu/<?= $jeu['image'] ?>">
+            </div>    
+            <div class="descriptionJeu">
+                <div class="titreJeu">
+                    <p class="titre"> <?= $jeu['nom'] ?> </p>
+                    <p class="dateSortie"><?= $jeu['date_de_sortie'] ?></p>
                 </div>
-                <p class="description">
-                    <?= $jeu['description'] ?>
-                </p>
+                <div class="boiteInfo">
+                    <div class="tags">
+                        <p>des tags à foison</p>
+                    </div>
+                    <p class="description">
+                        <?= $jeu['description'] ?>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    </a>    
 <?php } ?>

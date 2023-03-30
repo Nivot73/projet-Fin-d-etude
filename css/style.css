@@ -11,6 +11,10 @@ body {
     color: white;
 }
 
+a{
+    color: white;
+}
+
 button, input{
     border: none;
 }
@@ -268,8 +272,7 @@ h2 {
     margin: 2vh 2vw;
 }
 
-main > .jeu {
-    
+.jeu {
     width: 1119px;
     height: 140px;
     
@@ -281,24 +284,24 @@ main > .jeu {
     display: flex;
 }
 
-main > .jeu > .image {
+.jeu > .image {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 32%;
 }
 
-main > .jeu > .image > img {
+.jeu > .image > img {
     Width: 276px;
     Height: 103px;
 }
 
-main > .jeu > .descriptionJeu{
+.jeu > .descriptionJeu{
     border-left: white 1px solid;
     width:68%;
 }
 
-main > .jeu > .descriptionJeu > .titreJeu{
+.jeu > .descriptionJeu > .titreJeu{
     border-bottom: white 1px solid;
     padding: 7px;
 
@@ -306,17 +309,17 @@ main > .jeu > .descriptionJeu > .titreJeu{
     justify-content: space-between;
 }
 
-main > .jeu > .descriptionJeu > .boiteInfo {
+.jeu > .descriptionJeu > .boiteInfo {
     display: flex;
     height: 76%;
 }
 
-main > .jeu > .descriptionJeu > .boiteInfo > .tags{
+.jeu > .descriptionJeu > .boiteInfo > .tags{
     padding: 1% 1% 0 1%;
     width:20%;
 }
 
-main > .jeu > .descriptionJeu > .boiteInfo > .description {
+.jeu > .descriptionJeu > .boiteInfo > .description {
     padding: 1% 1% 0 1%;
     border-left: white 1px solid;
 }
@@ -331,7 +334,7 @@ main > .pageParametre > a > button{
     color: white;
 }
 
-main > .pageParametre > form {
+.pageParametre > form {
     position: relative;
     left: 20vw;
     top: 12vh;
