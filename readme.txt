@@ -4,7 +4,7 @@ Le sujet est une application format desktop visant a aider les personnes à trou
 
 Il existe un role admin permettant d'apporter des modification sans recourir à la BDD directement (en travaux)
 
-Les recommendation de jeux, amis et salons se feront grace a l'aléatoire.
+Les recommendation de jeux, amis et salons ainsi que les possibles classements se feront grace a l'aléatoire grace à la fonction PHP shuffle().
 
 
 
