@@ -28,7 +28,7 @@ require_once('bdd/close.php');
         <p>TITRE : <?= $jeu['nom'] ?></p>
         <div>
             <button>favori</button>
-            <button>demande ami</button>
+            <button>ajouter à jouer</button>
         </div>
     </div>
     <div class="tagJeu"></div>
