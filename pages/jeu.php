@@ -25,13 +25,13 @@ require_once('bdd/close.php');
 <div class="infoJeu">
     <img src="images/imageJeu/<?= $jeu['image'] ?>" alt="">
     <div>
-        <p><?= $jeu['nom'] ?></p>
+        <p>TITRE : <?= $jeu['nom'] ?></p>
         <div>
             <button>favori</button>
             <button>demande ami</button>
         </div>
     </div>
     <div class="tagJeu"></div>
-    <p><?= $jeu['description'] ?></p>
+    <p>Description : <?= $jeu['description'] ?></p>
 </div>
 <div class="listDansJeu"></div>
