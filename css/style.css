@@ -304,7 +304,6 @@ main > .jeu > .descriptionJeu > .titreJeu{
 
     display: flex;
     justify-content: space-between;
-    height: 15%;
 }
 
 main > .jeu > .descriptionJeu > .boiteInfo {
