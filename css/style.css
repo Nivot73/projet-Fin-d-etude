@@ -300,7 +300,7 @@ main > .jeu > .descriptionJeu{
 
 main > .jeu > .descriptionJeu > .titreJeu{
     border-bottom: white 1px solid;
-    padding: 5px;
+    padding: 7px;
 
     display: flex;
     justify-content: space-between;
