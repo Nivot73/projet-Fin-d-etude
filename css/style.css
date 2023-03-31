@@ -774,3 +774,17 @@ td > p{
     font-size: 20px;
     line-height: 24px;
 }
+
+.tagJeu{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 69px 14px 16px;
+    gap: 10px;
+    background: #2C2F50;
+}
+
+.tagJeuUn{
+    background: #7160D6;
+    
+}

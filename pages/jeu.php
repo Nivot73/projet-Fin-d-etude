@@ -14,12 +14,17 @@ if(isset($_GET['id']) && !empty($_GET['id']))
     if (empty($jeu)){
         header("location:index.php");
     }
+
+    $sql = 'SELECT `id` FROM `genrejeu` WHERE `id_jeux`=:id';
+    $query = $db->prepare($sql);
+    $query->bindValue(':id', $id);
+    $query->execute();
+    $genreJeu = $query->fetchAll(PDO::FETCH_ASSOC);
+
 }
 else{
     header("location:index.php");
 }
-
-require_once('bdd/close.php');
 ?>
 
 <div class="infoJeu">
@@ -31,7 +36,23 @@ require_once('bdd/close.php');
             <button>ajouter à jouer</button>
         </div>
     </div>
-    <div class="tagJeu"></div>
+    <div class="tagJeu">
+    <?php
+        foreach($genreJeu as $genre)
+        {
+            $idGenre = $genre['id'];
+
+            $sql = 'SELECT * FROM `genres` WHERE `id`=:id';
+            $query = $db->prepare($sql);
+            $query->bindValue(':id', $idGenre);
+            $query->execute();
+            $nomGenre = $query->fetch(PDO::FETCH_ASSOC);
+
+            echo '<div class="tagJeuUn">'.$nomGenre["nom"].'</div>';
+        }
+    ?>
+    </div>
     <p>Description : <?= $jeu['description'] ?></p>
 </div>
 <div class="listDansJeu"></div>
+<?php require_once('bdd/close.php'); ?>
