@@ -44,8 +44,8 @@ else{
     <div>
         <p>TITRE : <?= $jeu['nom'] ?></p>
         <div class="boutonAjoutAmis">
-            <button>favori</button>
-            <button>ajouter à jouer</button>
+            <button><img src="images/icone/plus.svg" alt=""></button>
+            <button><img src="images/icone/heart-plus.svg" alt=""></button>
         </div>
     </div>
     <div class="tagJeu">

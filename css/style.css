@@ -774,6 +774,12 @@ td > p{
     justify-content: space-evenly;
 }
 
+.boutonAjoutAmis > button{
+    border-radius: 100%;
+    padding: 2%;
+    displ
+}
+
 .infoJeu > p {
     background: #2C2F50;
     padding: 1%;
