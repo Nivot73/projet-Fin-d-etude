@@ -31,7 +31,7 @@ else{
     <img src="images/imageJeu/<?= $jeu['image'] ?>" alt="">
     <div>
         <p>TITRE : <?= $jeu['nom'] ?></p>
-        <div>
+        <div class="boutonAjoutAmis">
             <button>favori</button>
             <button>ajouter à jouer</button>
         </div>
@@ -48,7 +48,7 @@ else{
             $query->execute();
             $nomGenre = $query->fetch(PDO::FETCH_ASSOC);
 
-            echo '<div class="tagJeuUn">'.$nomGenre["nom"].'</div>';
+            echo '<p class="tagJeuUn">'.$nomGenre["nom"].'</p>';
         }
     ?>
     </div>

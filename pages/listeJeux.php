@@ -6,7 +6,6 @@ $query = $db->prepare($sql);
 $query->execute();
 $listJeux = $query->fetchAll(PDO::FETCH_ASSOC);
 
-require_once('bdd/close.php');
 ?>
 
 <h2>Liste de Jeu</h2>
@@ -14,7 +13,7 @@ require_once('bdd/close.php');
 <?php
 foreach ($listJeux as $jeu) {
 ?>
-    <a href="?page=jeu&id=<?= $jeu['id'] ?>">
+    <a class="lienVersJeu" href="?page=jeu&id=<?= $jeu['id'] ?>">
         <div class="jeu">
             <div class="image">
                 <img src="images/imageJeu/<?= $jeu['image'] ?>">
@@ -26,7 +25,29 @@ foreach ($listJeux as $jeu) {
                 </div>
                 <div class="boiteInfo">
                     <div class="tags">
-                        <p>des tags à foison</p>
+                    <?php
+
+                        $id = $jeu['id'];
+
+                        $sql = 'SELECT `id` FROM `genrejeu` WHERE `id_jeux`=:id';
+                        $query = $db->prepare($sql);
+                        $query->bindValue(':id', $id);
+                        $query->execute();
+                        $genreJeu = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach($genreJeu as $genre)
+                        {
+                            $idGenre = $genre['id'];
+
+                            $sql = 'SELECT * FROM `genres` WHERE `id`=:id';
+                            $query = $db->prepare($sql);
+                            $query->bindValue(':id', $idGenre);
+                            $query->execute();
+                            $nomGenre = $query->fetch(PDO::FETCH_ASSOC);
+
+                            echo '<p class="tagJeuUn">'.$nomGenre["nom"].'</p>';
+                        }
+                    ?>
                     </div>
                     <p class="description">
                         <?= $jeu['description'] ?>
@@ -35,4 +56,6 @@ foreach ($listJeux as $jeu) {
             </div>
         </div>
     </a>    
-<?php } ?>
+<?php } 
+require_once('bdd/close.php');
+?>

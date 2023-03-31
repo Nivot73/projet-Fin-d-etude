@@ -272,11 +272,17 @@ h2 {
     margin: 2vh 2vw;
 }
 
+.lienVersJeu{
+    width: fit-content;
+    display: inline-block;
+    margin: 2vh 2vw;
+}
+
 .jeu {
     width: 1119px;
     height: 140px;
     
-    margin: 2vh 2vw;
+    
 
     background: #363962;
     border-radius: 10px;
@@ -317,6 +323,9 @@ h2 {
 .jeu > .descriptionJeu > .boiteInfo > .tags{
     padding: 1% 1% 0 1%;
     width:20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .jeu > .descriptionJeu > .boiteInfo > .description {
@@ -758,7 +767,7 @@ td > p{
     line-height: 24px;
 }
 
-.infoJeu > div > div{
+.boutonAjoutAmis{
     width: 30%;
     display: flex;
     justify-content: space-evenly;
@@ -786,5 +795,6 @@ td > p{
 
 .tagJeuUn{
     background: #7160D6;
-    
+    width: fit-content;
+    padding:1%
 }
