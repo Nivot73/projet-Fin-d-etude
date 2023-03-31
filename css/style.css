@@ -757,6 +757,7 @@ td > p{
 
 .infoJeu > div{
     width: 80%;
+    margin: 1%;
     display: flex;
     justify-content: space-between;
 
@@ -797,4 +798,29 @@ td > p{
     background: #7160D6;
     width: fit-content;
     padding:1%
+}
+
+.listDansJeu{
+    display: flex;
+}
+
+.listDansJeu > div{
+    width: 40%;
+    margin: 0 5%;
+    background: #2C2F50;
+}
+
+.listDansJeu > div >p{
+    padding: 1%;
+    border-bottom: white 1px solid;
+}
+
+.listDansJeu > div >table{
+    padding: 1%;
+    width: 100%;
+}
+
+.imageListDansJeu{
+    Width:70px;
+    Height:70px;
 }
