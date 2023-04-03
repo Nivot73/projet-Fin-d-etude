@@ -54,10 +54,10 @@ foreach ($listUtilisateurs as $utilisateur) {
         $query->execute();
         $donnees = $query->fetch(PDO::FETCH_ASSOC);
         ?>
-        <div class="boiteJeu">
+        <a href="?page=jeu&id=<?= $donnees['id'] ?>" class="boiteJeu">
             <img src="images/imageJeu/<?= $donnees['image'] ?>" alt="">
             <p><?= $donnees['nom']; ?></p>
-        </div>
+        </a>
     <?php } ?>
     </div>
     <div class="boiteListSalon">

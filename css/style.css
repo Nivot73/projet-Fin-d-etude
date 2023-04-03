@@ -673,17 +673,17 @@ td > p{
     display: flex;
 }
 
-.listUtilisateurBlock > div > img {
-    Width:70px;
-    Height:70px;
-}
-
 .boiteID{
     width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.boiteID > img {
+    Width:70px;
+    Height:70px;
 }
 
 .boiteListSalon{
@@ -713,6 +713,7 @@ td > p{
 
 .boiteJeu > p{
     text-align: center;
+    padding: 1%;
 }
 
 .boiteListSalon{

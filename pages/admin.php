@@ -81,7 +81,7 @@ if(isset($_GET['tab'])){
     
         <tr>
             <td><?= $jeu['id'] ?></td>
-            <td><?= $jeu['nom'] ?></td>
+            <td><a href="?page=jeu&id=<?= $jeu['id'] ?>"><?= $jeu['nom'] ?></a></td>
             <td class="adminDescription"><p><?= $jeu['description'] ?></p></td>
             <td><img src="images/imageJeu/<?= $jeu['image'] ?>" class="imageListAdmin"></td>
             <td><?= $jeu['date_de_sortie'] ?></td>
