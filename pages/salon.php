@@ -1,0 +1,1 @@
+page de salon <?= $_GET['id']; ?>

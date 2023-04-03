@@ -18,7 +18,7 @@ foreach ($listUtilisateurs as $utilisateur) {
 ?>
 
 <div class="listUtilisateurBlock">
-    <div class="boiteID">
+    <a href="?page=utilisateur&id=<?= $utilisateur['id'] ?>"class="boiteID">
         <img src="images/avatar/<?= $utilisateur['image'] ?>" alt="">
         <p><?= $utilisateur['nom'] ?></p>
         <p>inscrit depuis le : <?= $utilisateur['information'] ?></p>
@@ -32,7 +32,7 @@ foreach ($listUtilisateurs as $utilisateur) {
         else {$connecter = "Etat inconnu";}
         ?>
         <p><?= $connecter ?></p>
-    </div>
+    </a>
     <div class="boiteListJeu">
     <?php
 
@@ -81,10 +81,10 @@ foreach ($listUtilisateurs as $utilisateur) {
         $query->execute();
         $donnees = $query->fetch(PDO::FETCH_ASSOC);
         ?>
-        <div class="boiteSalon">
+        <a href="?page=salon&id=<?= $donnees['id'] ?>" class="boiteSalon">
             <img src="images/imageSalon/<?= $donnees['image'] ?>" alt="">
             <p><?= $donnees['nom']; ?></p>
-        </div>
+        </a>
     <?php } ?>
     </div>
 </div>
