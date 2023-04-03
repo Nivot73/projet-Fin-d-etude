@@ -1,44 +1,63 @@
 <?php
-    require_once('bdd/connect.php');
+require_once('bdd/connect.php');
 
-    $message="";
+$message="";
 
-    if(isset($_POST['nom']) && !empty($_POST['nom'])
-    && isset($_POST['mail']) && !empty($_POST['mail'])
-    && isset($_POST['mdp']) && !empty($_POST['mdp'])
-    && isset($_POST['image']) && !empty($_POST['image']))
-    {
-        $id = strip_tags($_SESSION['id']);
-        $nom = strip_tags($_POST['nom']);
-        $mail = strip_tags($_POST['mail']);
-        $mdp = strip_tags($_POST['mdp']);
-        $image = strip_tags($_POST['image']);
+$sql = 'SELECT * FROM `utilisateurs` WHERE `id`=:id';
+$query = $db->prepare($sql);
+$query->bindValue(':id', $_SESSION['id']);
+$query->execute();
+$infoUtilisateur = $query->fetch(PDO::FETCH_ASSOC);
 
-        $sql = "UPDATE `utilisateurs` SET `nom`=:nom, `e-mail`=:mail, `mdp`=:mdp, `image`=:image WHERE `id`=:id;";
-
-        $query = $db->prepare($sql);
-
-        $query->bindValue(':id', $id);
-        $query->bindValue(':nom', $nom);
-        $query->bindValue(':mail', $mail);
-        $query->bindValue(':mdp', $mdp);
-        $query->bindValue(':image', $image);
+if(isset($_POST['nom']) && !empty($_POST['nom'])
+&& isset($_POST['mail']) && !empty($_POST['mail'])
+&& isset($_POST['mdp']) && !empty($_POST['mdp']))
+{
+    $id = strip_tags($_SESSION['id']);
+    $nom = strip_tags($_POST['nom']);
+    $mail = strip_tags($_POST['mail']);
+    $mdp = strip_tags($_POST['mdp']);
     
-        $query->execute();
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
 
-        $message="modification effectué";
+        if ($_FILES['image']['size'] <= 10000000) {
+    
+            $infosfichier = pathinfo($_FILES['image']['name']);
+            $extension_upload = $infosfichier['extension'];
+            $extensions_autorisees = array('jpg','jpeg','gif','png','PNG');
+    
+            if (in_array($extension_upload, $extensions_autorisees)) {
+    
+            $filename = basename($_FILES['image']['name']);
+            $image = $filename;
+    
+            move_uploaded_file($_FILES['image']['tmp_name'],'images/avatar/' . $image);
+            }
+        }
+    }
+    else {
+        $image = $infoUtilisateur['image'];
     }
 
-    $sql = 'SELECT * FROM `utilisateurs` WHERE `id`=:id';
-    $query = $db->prepare($sql);
-    $query->bindValue(':id', $_SESSION['id']);
-    $query->execute();
-    $infoUtilisateur = $query->fetch(PDO::FETCH_ASSOC);
+    $sql = "UPDATE `utilisateurs` SET `nom`=:nom, `e-mail`=:mail, `mdp`=:mdp, `image`=:image WHERE `id`=:id;";
 
-    require_once('bdd/close.php');
+    $query = $db->prepare($sql);
+
+    $query->bindValue(':id', $id);
+    $query->bindValue(':nom', $nom);
+    $query->bindValue(':mail', $mail);
+    $query->bindValue(':mdp', $mdp);
+    $query->bindValue(':image', $image);
+
+    $query->execute();
+
+    $message="modification effectué";
+} 
+
+require_once('bdd/close.php');
 ?>
 <div class="pageParametre">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="nom">
             <label for="nom">Nom : </label>
             <input type="text" name="nom" id="nom" value="<?= $infoUtilisateur['nom'] ?>"><br>
@@ -52,8 +71,8 @@
             <input type="password" name="mdp" id="mdp" value="<?= $infoUtilisateur['mdp'] ?>"><br>
         </div>
         <div class="image">
-            <label for="image">Image : </label>
-            <input type="text" name="image" id="image" value="<?= $infoUtilisateur['image'] ?>"><br>
+            <label for="image">Changement d'image : </label>
+            <input type="file" name="image" id="image"><br>
         </div>
         <div class="information">
             <p>Inscrit depuis le <?= $infoUtilisateur['information'] ?></p>

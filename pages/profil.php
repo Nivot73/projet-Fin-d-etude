@@ -29,7 +29,7 @@ require_once('bdd/connect.php');
 
 ?>
 
-<img class="imageProfil" src="images/imageJeu/<?= $info['image'] ?>" alt="">
+<img class="imageProfil" src="images/avatar/<?= $info['image'] ?>" alt="">
 <p class="pseudoProfil" ><?= $info['nom'] ?></p>
 <div class="blockListGroup">
     <div class="blockList">
