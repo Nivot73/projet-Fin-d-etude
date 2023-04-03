@@ -38,7 +38,7 @@ if(isset($_GET['tab'])){
     
         <tr>
             <td><?= $utilisateur['id'] ?></td>
-            <td><?= $utilisateur['nom'] ?></td>
+            <td><a href="?page=utilisateur&id=<?= $utilisateur['id'] ?>"><?= $utilisateur['nom'] ?></a></td>
             <td ><?= $utilisateur['e-mail'] ?></td>
             <td><img src="images/avatar/<?= $utilisateur['image'] ?>" class="imageListAdmin"></td>
             <td><?= $utilisateur['information'] ?></td>
@@ -141,7 +141,7 @@ if(isset($_GET['tab'])){
     
         <tr>
             <td><?= $salon['id'] ?></td>
-            <td><?= $salon['nom'] ?></td>
+            <td><a href="?page=salon&id=<?= $salon['id'] ?>"><?= $salon['nom'] ?></a></td>
             <td ><?= $salon['description'] ?></td>
             <td><?= $salon['id_jeux'] ?></td>
             <td>Actions</td>
