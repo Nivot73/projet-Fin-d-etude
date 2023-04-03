@@ -82,7 +82,7 @@ foreach ($listUtilisateurs as $utilisateur) {
         $donnees = $query->fetch(PDO::FETCH_ASSOC);
         ?>
         <div class="boiteSalon">
-            <img src="images/imageJeu/<?= $donnees['image'] ?>" alt="">
+            <img src="images/imageSalon/<?= $donnees['image'] ?>" alt="">
             <p><?= $donnees['nom']; ?></p>
         </div>
     <?php } ?>

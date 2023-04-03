@@ -73,6 +73,14 @@ if(isset($_SESSION["connecter"])){
 			include 'pages/listeUtilisateurs.php' ;
 		break;
 
+		case 'utilisateur' :
+			$title = "profil autre" ;
+			?> <style>
+    			.amis{background: #7160D6;}
+				</style> <?php
+			include 'pages/utilisateur.php' ;
+		break;
+
 		case 'listeJeux' :
 			$title = "Liste des Jeux" ;
 			?> <style>
