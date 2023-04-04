@@ -830,3 +830,36 @@ td > p{
     Width:70px;
     Height:70px;
 }
+
+/* page liste salon */
+
+.lienVersSalon {
+    display: flex;
+    background: #363962;
+    border-radius: 10px;
+    margin: 1vw;
+    padding: 1%;
+    width: 95%;
+}
+
+.lienVersSalon > img {
+    Width:30%;
+    Height:100px;
+    margin:1%;
+}
+
+.lienVersSalon > div {
+    width: 65%;
+}
+
+.lienVersSalon > div > p {
+    padding: 1%;
+}
+
+.listSalonBlockNom{
+    padding: 1vh 1vw;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px white solid;
+}

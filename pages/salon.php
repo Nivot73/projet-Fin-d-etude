@@ -11,7 +11,7 @@ if(isset($_GET['id']) && !empty($_GET['id']))
     $query->execute();
     $info = $query->fetch(PDO::FETCH_ASSOC);
 
-    $sql = 'SELECT * FROM `salons` WHERE `id_salons`=:id';
+    $sql = 'SELECT * FROM `commentaires` WHERE `id_salons`=:id';
     $query = $db->prepare($sql);
     $query->bindValue(':id', $id);
     $query->execute();
@@ -21,3 +21,4 @@ if(isset($_GET['id']) && !empty($_GET['id']))
 }
 else{header("location:index.php");}
 ?>
+page salon simple
