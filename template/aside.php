@@ -10,8 +10,5 @@
         <li><a href="?page=admin"><button class="admin"><img src="images/icone/settings.svg"> Page d'amninistration</button></a></li>
         <?php } ?>  
     </ul>
-    <p>mesure: width = 1440 px  height = 1024 px</p>
-    <p>votre id est <?= $_SESSION['id'] ?></p>
-    <p>votre role est <?= $_SESSION['role'] ?></p>
     <a href="?page=deconnexion"><button class="deconnexion"><img src="images/icone/deconnexion.svg" alt="bouton de deconnexion"></button></a>
 </aside>
