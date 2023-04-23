@@ -89,17 +89,17 @@ else{
                     $query->execute();
                     $info = $query->fetch(PDO::FETCH_ASSOC);
                 ?>
-                    <tr>
+                    <tr>    
                         <td><img  class="imageListDansJeu" src="images/imageSalon/<?= $info['image'] ?>" alt=""></td>
-                        <td><?= $info['nom'] ?></td>
+                        <td><a href="?page=utilisateur&id=<?= $info['id'] ?>"><?= $info['nom'] ?></a></td>
                         <td>
-                           <?php 
+                        <?php 
                             if($info['connexion'] == 1)
                             { echo "Connecté";}
                             else
                             { echo"Deconnecter";}
                             ?>
-                        </td>
+                        </td>  
                     </tr>
                 <?php } ?>
 
@@ -123,7 +123,7 @@ else{
             ?>
                 <tr>
                     <td><img  class="imageListDansJeu" src="images/imageSalon/<?= $salon['image'] ?>" alt=""></td>
-                    <td><?= $salon['nom'] ?></td>
+                    <td><a href="?page=salon&id=<?= $salon['id'] ?>"><?= $salon['nom'] ?></a></td>
                     <td><?= $salon['description'] ?></td>
                 </tr>
             <?php } ?>
