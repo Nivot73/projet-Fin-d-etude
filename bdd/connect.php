@@ -1,8 +1,8 @@
 <?php
 
 $databaseDNS    	= 'mysql:host=localhost;dbname=projethandigital';
-$databaseUsername 	= 'projet_user';//"root";
-$databasePassword 	= 'projet_password';//"";
+$databaseUsername 	= 'projet_user';
+$databasePassword 	= 'projet_password';
 
 
 
