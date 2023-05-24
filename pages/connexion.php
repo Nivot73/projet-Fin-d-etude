@@ -32,9 +32,7 @@ if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])
 
         header("location:index.php");
     }
-    else {
-        $erreur = "IDENTIFIANT ou MOT DE PASSE erroné";
-    }
+    else {  $erreur = "IDENTIFIANT ou MOT DE PASSE erroné"; }
 }
 else {
     session_destroy();
