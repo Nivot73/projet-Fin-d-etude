@@ -34,8 +34,7 @@ if(isset($_GET['tab'])){
 <tbody>
 <?php
     foreach ($listUtilisateurs as $utilisateur) {
-    ?>
-    
+    ?>    
         <tr>
             <td><?= $utilisateur['id'] ?></td>
             <td><a href="?page=utilisateur&id=<?= $utilisateur['id'] ?>"><?= $utilisateur['nom'] ?></a></td>
@@ -54,14 +53,11 @@ if(isset($_GET['tab'])){
     <?php } ?>
 </tbody>
 <?php }
-
-    if($_GET['tab'] == "jeux"){
-        
+    if($_GET['tab'] == "jeux"){        
         $sql = 'SELECT * FROM `jeux` ';
         $query = $db->prepare($sql);
         $query->execute();
-        $listJeux = $query->fetchAll(PDO::FETCH_ASSOC);
-        
+        $listJeux = $query->fetchAll(PDO::FETCH_ASSOC);       
 ?>
     <thead>
         <tr>
@@ -77,8 +73,7 @@ if(isset($_GET['tab'])){
     <tbody>
     <?php
     foreach ($listJeux as $jeu) {
-    ?>
-    
+    ?>    
         <tr>
             <td><?= $jeu['id'] ?></td>
             <td><a href="?page=jeu&id=<?= $jeu['id'] ?>"><?= $jeu['nom'] ?></a></td>
@@ -86,10 +81,8 @@ if(isset($_GET['tab'])){
             <td><img src="images/imageJeu/<?= $jeu['image'] ?>" class="imageListAdmin"></td>
             <td><?= $jeu['date_de_sortie'] ?></td>
             <td>
-            <?php
-            
+            <?php           
             $id = strip_tags($jeu['id']);
-
             $sql = 'SELECT * FROM `genrejeu` WHERE `id_jeux`=:id';
             $query = $db->prepare($sql);
             $query->bindValue(':id', $id);
@@ -99,23 +92,19 @@ if(isset($_GET['tab'])){
             foreach ($listGenre as $genre) {
             
             $id = strip_tags($genre["id"]);
-
             $sql = 'SELECT nom FROM `genres` WHERE `id`=:id';
             $query = $db->prepare($sql);
             $query->bindValue(':id', $id);
             $query->execute();
-            $nomGenre = $query->fetch(PDO::FETCH_ASSOC);
-    
+            $nomGenre = $query->fetch(PDO::FETCH_ASSOC);    
             ?>
             <p class="genreJeux"><?= $nomGenre["nom"] ?></p>
-            <?php } ?>
-            
+            <?php } ?>            
             </td>
             <td>Actions</td>
         </tr>
     <?php } ?>
     </tbody>
-
 <?php } 
 
     if($_GET['tab'] == "salons"){

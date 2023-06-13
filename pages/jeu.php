@@ -38,7 +38,6 @@ else{
     header("location:index.php");
 }
 ?>
-
 <div class="infoJeu">
     <img src="images/imageJeu/<?= $jeu['image'] ?>" alt="">
     <div>

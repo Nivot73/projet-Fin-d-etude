@@ -5,11 +5,8 @@ $sql = 'SELECT * FROM `jeux` ';
 $query = $db->prepare($sql);
 $query->execute();
 $listJeux = $query->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
-
 <h2>Liste de Jeu</h2>
-
 <?php
 foreach ($listJeux as $jeu) {
 ?>
@@ -26,9 +23,7 @@ foreach ($listJeux as $jeu) {
                 <div class="boiteInfo">
                     <div class="tags">
                     <?php
-
                         $id = $jeu['id'];
-
                         $sql = 'SELECT `id` FROM `genrejeu` WHERE `id_jeux`=:id';
                         $query = $db->prepare($sql);
                         $query->bindValue(':id', $id);
@@ -38,13 +33,11 @@ foreach ($listJeux as $jeu) {
                         foreach($genreJeu as $genre)
                         {
                             $idGenre = $genre['id'];
-
                             $sql = 'SELECT * FROM `genres` WHERE `id`=:id';
                             $query = $db->prepare($sql);
                             $query->bindValue(':id', $idGenre);
                             $query->execute();
                             $nomGenre = $query->fetch(PDO::FETCH_ASSOC);
-
                             echo '<p class="tagJeuUn">'.$nomGenre["nom"].'</p>';
                         }
                     ?>
